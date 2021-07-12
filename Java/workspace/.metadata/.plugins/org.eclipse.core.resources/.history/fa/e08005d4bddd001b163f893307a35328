@@ -1,0 +1,12 @@
+
+public class Desafio {
+
+	List<String> letras = new LinkedList<>();
+	letras.add("A");
+	letras.add("B");
+	letras.add("C");
+	
+	letras.forEach(letra -> {
+		System.out.println(letra);
+	})
+}

@@ -1,0 +1,7 @@
+
+public class TesteConexão {
+
+	public static void main(String[] args) {
+		Conhexão c = new Coneão();
+	}
+}

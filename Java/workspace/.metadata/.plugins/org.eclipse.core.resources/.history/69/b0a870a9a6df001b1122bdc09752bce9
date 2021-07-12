@@ -1,0 +1,13 @@
+
+public class TesteConexão {
+
+	public static void main(String[] args) {
+		try {
+		Conexao c = new Conexao();
+		c.leDados();
+		c.fecha();
+		} catch(IllegalStateException ex) {
+			
+		}
+	}
+}

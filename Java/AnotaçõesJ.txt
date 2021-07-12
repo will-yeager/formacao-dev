@@ -1,0 +1,139 @@
+------------------------------------ JAVA BASICS ---------------------------------
+
+Máquina Virtual JAVA JVM
+
+linguagem java -> bytecode java -> MAQUINA VIRTUAL JAVA -> sistemas
+
+o Bytecode é independente do sistema operacional
+
+JDK -> Java Developer Kit
+JRE -> Java Runtime Enviroment
+JVM -> Java Virtual Machines
+
+Criando o primeiro programa em JAVA:
+    É necessário o nome do arquivo ser igual a class principal dele 
+    O metodo main é sempre -> public static void main(String[] args) {}
+    Toda instrução Java deve ser finalizada com ;
+
+javac CLASSE.java -> compilar o codigo
+java CLASSE -> rodar o código compilado na virtual machine
+
+System.out.println() -> Para imprimir algo no console dando linha no final
+
+Variaveis:
+    int -> número inteiro
+    float -> número flutuante obs : no final do número deve ter f
+    double -> número inteiro ou número real
+    String -> texto
+    char -> um único caractere
+    boolean -> true ou false
+    long -> guarda um número maior que bilhões obs: no final do número deve ter l
+    short -> guarda um número pequeno
+    byte -> guarda um número menor que o short que vai até 127
+
+    type cast -> converter um tipo de variavel em outra por exemplo para transformar um número double em é int é só colocar (int) na frente da variavel
+
+Condicional:
+    if -> se
+    else -> senão
+
+    switch -> condição usando casos
+        case 1: -> caso 1
+            break -> para parar o código se o caso for 1
+        default: -> se nenhum dos casos for validos ele será executado
+            break
+
+    || -> or 
+    && -> and
+
+Escopos:
+    escopos de bloco -> as variaveis só existem dentro do bloco, como por exemplo nas condicionais
+    escopos dos laços -> as variaveis como devem ser declarada antes do laço elas são globais, como por exemplo no while
+
+Laço de Repetição:
+    while -> Ele repeta uma função até uma condição digitada ser verdadeira
+    for -> (VARIAVEL; CONDIÇÃO; MUDANÇA DA VARIAVEL)
+
+Como randomizar um numero em uma range determinada -> random.nextInt((max - min) + 1) + min;
+
+Equals:
+    Usado no lugar do (==) pois pode conflitr entre objetos
+
+Thread -> São usadas para executar dois ou mais procedimentos internos do programa ao mesmo tempo ou seja executar algo paralelamente
+
+--------- Exception ---------
+
+Para criar uma exceção é so implementar a inferface Exception/RuntimeException
+
+O compilador verifica Exception - (checked) -> obrigado o tratamento do erro
+O compilador não verifica o RuntimeException - (unchecked) -> não obriga o tratamento do erro
+
+throw new Exception -> joga um erro na pilha de execução
+
+try {} catch(Exception e) {} finally {} -> Estrutura básica da exceções
+
+pilha de execução -> call stack
+    o programa vai executando sempre o método do topo da pilha
+
+Debug(Debugar) -> é percorrer a pilha de execução para entender oque acontece internamente no programa
+
+CONDIÇÃO | CONDIÇÃO -> usado para retornar true se alguma das condições for verdadeira
+
+Error -> são erros gerenciados pela virtualmachine do java 
+    stackoverflowerror -> erro mais classico que informa que a pilha de execução não tem mais memória .
+
+Quando implementada a interface AutoCloseable é possivel fazer um finally automatico com a criação do metodo close
+
+Quando há o finally o catch é o opcional
+
+IllegalArgumentException(msg)
+IllegalStateException(msg)
+
+--------- Java PACOTES E MODIFICADORES DE ACESSO ---------
+
+Pacotes(Packages) -> pastas para organização do projeto
+
+Padrão Nomenclatura de pacotes -> NOME_DO_SITE_AO_CONTRARIO.NOME_DO_PROJETO -> br.com.exemlo.projetoexemplo
+
+Full qualified name(FQN) -> É o nome completo da classe, composto pelo nome do pacote e o nome da classe
+
+public -> atributo/metodo visivel para todos
+protected -> atributo visivel apenas para qualquer um no pacote e para as classes filhas fora do pacote
+<< package private >> (default) -> atributo visivel a classe e dentro do pacote
+private -> atributo visivel apenas na classe
+
+---- DOC ----
+
+DOCUMENTAÇÃO -> apenas comentar classes/metodos usando essa estrutura de comentarios-> /** 
+                                                                                        * doc aqui
+                                                                                        */
+
+Depois de fazer os comentarios basta clicar em project e gerar a documentação;
+
+---- JAR ----
+
+O arquivo jar é necessario quando queremos transformar um projeto em uma library/biblioteca para ser usado por outros programadores, as famosas libs/
+
+É possivel criar um arquivo jar executavel que inicia usando um main, configurando na criação do JAR
+
+---- JAVA.LANG ----
+
+Pacote fundamental do java, que é importado automatiamente
+    Ex. de class -> System, Exception, String[]
+
+String é imutável, e é uma CharSequence
+
+StringBuilder -> usado para a concatenação de varias String usando objeto.append(STRING)
+
+---- JAVA.UTIL ----
+
+Para inicilizar uma array é apenas colocar -> Tipo[] Array = new Tipo[Quantidade]
+    É necessaria uma quantidade pre determinada para poder instanciar uma nova array
+    Há a possibilidade de iniciar de forma literal a array fazendo o seguinte -> Tipo[] Array = {ref1, ref2, ref3, ref4, ref5}
+
+Valor padrão de uma referencia é null
+Valor padrão de um int é 0
+
+---- Maven ----
+
+Estrutra que organiza todas dependencia e bibliotecas

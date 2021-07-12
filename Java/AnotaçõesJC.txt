@@ -1,0 +1,71 @@
+------------------------------------ JAVA COLLECTIONS ---------------------------------
+
+import java.util.Collections;
+
+List -> Interface do Collections
+
+ArrayList é rapida na inserção mas lenta na remoção dos primeiros elementos da lista
+
+LinkedList é rapida na remoção mas lenta na inserção dos primeiros elemntos da lista
+
+Iterator era usado para fazer um laço for -> LEGACY
+
+Vector é uma lista que trabalha em varias thread -> thread safe
+
+--------- ARRAYLIST ---------
+
+import java.util.ArrayList;
+
+ArrayList<E> lista = new ArrayList(); -> criação de uma lista
+
+List<String> listaCopia = new ArrayList<>(lista); -> criação de uma lista cópia para fazer quaisquer alterações
+
+lista.add -> usado para adicionar um elemento na lista
+
+lista.remove(X) -> usado para remover um elemento da lista na X posição
+
+lista.get(X) -> usado para mostrar um elemento da lista na X posição
+
+lista.forEach(elemento -> {função}) -> executar uma função para cada elemento da lista
+
+for (clase elemento : lista) { função } -> executar uma função para cada elemento da lista
+
+-------------------------------
+
+Collections.sort(lista) -> coloca a lista em ordem alfabetica
+    Para ordernar uma lista de objetos é necessario a implementação da interface compareTo, e escreva o metodo comparando o atributo que deseja
+
+Collections.unmodifiableList(lista); -> usado para deixar uma lista com modo apenas de leitura
+
+lista.sort(Comparator.comparing(elemento::funçãoGET)); -> usado para sortear a lista de acordo com algum atributo usando o metodo GET da classe
+
+Metodo ToString dos objetos é modificado para mostrar oque desejamos quando damos print
+
+--------- SET ---------
+
+import java.util.Set -> Interface usada para criação de conjunto de elementos
+
+Conjunto não aceita elementos repetidos
+
+Conjunto não mantem a ordem de inserção como nas listas
+
+Conjunto posssui os metodos contains() e remove() que são mais rápidos que em listas
+
+Hashcode -> Código atribuido aos objetos dentro de um HashSet
+    Quando houver a sobrescrita do Equals é também necessaria a sobrescrita do HashCode também
+
+Para o uso do TreeSet é necessario a implementação da interface COMPARABLE ou em seu parametro. Pois é um tipo de lista ordenada
+
+--------- MAP ---------
+
+import java.util.map 
+
+HashMap -> Interface uasada para a localização de objetos usando chaves
+
+put(key, object) -> metodo usado para colocar um objeto com uma chave no HASHMAP
+
+keySet() -> um metodo usada para a criação de um Set com apenas as chaves do HASHMAP
+
+values() -> um metodo usado para a criação de um Set com apenas os valores do HASHAMP
+
+entrySet() -> um metodo usada para a criação de um Set com as associações(de chaves com valores) do HASHMAP

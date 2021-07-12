@@ -1,0 +1,53 @@
+git é um sistema de controle de versão que ajuda a manter historico das modificaçõess
+
+git init -> criar um repositorio na pasta atual
+    git init --bare -> criar um repositorio servidor
+
+git status -> mostrar informações sobre o repositorio
+
+git config --local user.name "NOME" -> configurar um nome para quem está manipulando o código
+    git config --local user.email "EMAIL" -> configurar um email para quem está manipulando o código
+
+git add . -> subir as mudanças para poder commitar essas mudanças
+
+git commit -m "MENSAGEM" -> commitar as mundanças salvas
+
+git stash -> salvar algo para fazer mudanças mais tarde
+    git stash list -> ver alterações salvas
+    git stash apply -> dar merge de uma alteração da stash
+    git stash drop -> remover a altreação da stash
+    git stash pop -> dar merge da ultima alteração da stash e retira ela da stash
+
+git log -> historico do repositorio
+    git log --oneline -> historico do repositorio mas resumido em apenas uma linha para cada commit
+    git log -p -> historico do repositorio mais detalhadamente mostrando as alterações
+
+git remote add <nome> <url> -> adicionar repositorio servidor no seu repositorio
+
+git clone <url> <nomedoprojeto> -> clonar um repositorio
+
+git push repositorio master -> subir os commits para o repositorio remoto
+
+git branch BRANCH -> criar uma nova branch
+    git checkout BRANCH -> ir para a branch
+    git checkout CODIGOCOMMIT -> voltar em algum ponto do projeto
+
+git checkout -- <file> -> desfazer as mudanças
+    git reset HEAD <file> -> desfazer as mudanças que estão salvas para commitar
+    git revert HASHDOCOMMIT -> desfazer o commit
+
+git merge BRANCH -> dar um merge entre a branch atual e outra branch escolhida  
+    git rebase BRANCH -> dar um merge entre a branch atual e outra branch escolhida mas continuar na mesma linhs do repositorio
+
+git pull MEUREPOSOTORIO master -> puxar a versão mais atualizada do repositorio
+
+git diff -> mostra oque foi adicionado mas não foi commitado
+    git diff CODIGOCOMMIT1..CODIGOCOMMIT2 -> visualizar oque mudou de um commit até o outro
+
+git tag -a NOME -> criar uma marcação no estado atual do projeto por exemplo uma versão
+
+git commit --amend -> abrir o commit no vscode para fazer mudanças nele
+
+
+.gitignore -> arquivo que o git lê com uma lista de arquivos/diretorios a serem ignorados
+

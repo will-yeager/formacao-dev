@@ -1,0 +1,42 @@
+------------------------------------ JAVA OO ---------------------------------
+
+A necessidade dessa função foi propagar mudanças mudando apenas uma classe/objeto do código sem precisar ficar copiando e colando as mudanças.
+A ideia central da programação orientada a objeto é dados e funcionalidades andarem juntos
+
+As classes tem caracteristicas que são chamados de atributos
+
+Quando criamos um objeto ele é apenas uma referencia a um objeto de tipo CLASSE(que criamos)
+
+Os métodos são as funcionalidades da CLASSE
+    Os métodos necessitam de uma sinalização do valor de retorno como por exemplo void(não retorna nada) e booelan(retorna true or false)
+
+Super é usado para se referenciar a um atributo/metodo da CLASSE PAI
+
+This é usado para se referenciar a um atributo de uma CLASSE
+    self do python oo -> this no java oo
+
+null -> referencia que aponta a lugar nenhum
+
+Encapsualmento e visibilidade
+    A solução é não ter como mudar os atributos sem usar o metodos e para assim fazer os objetos e classes se manterem nas regras de negocio
+    private -> só pode alterar o atributo por meio de metodos 
+    protected -> apenas as classes filhos tem acesso ao atributo
+    metodos de get e set facilitam a manipulação dos codigos sem alterar nada que não seja da propria classe
+
+Construtores tem como principal funcionalidade inicializar atributos de uma classe, colocando-os nos parametros
+    Para chamar outro construtor usa-se o this()
+
+static -> faz o atributo/metódo ser da classe, não da referencia
+
+CLASSEFILHO extends CLASSEPAI -> Para uma classe herdar os atributos e metodos de uma outra classe
+    As classes filhos só podem ter a mesma visibilidade da classe pai
+
+O polimorfismo permite usar referências mais genéricas para a comunicação com um objeto;
+    abstract - torna a classe instanciavel porque é abstrato e no método torna-o sem implementação
+
+Não há herança de construtores
+
+Herança multiplas - não poder herdar multiplas classes pai
+
+Interface -> São como contratos que as outras classes assinam que irão preencher seus metodos abstratos
+

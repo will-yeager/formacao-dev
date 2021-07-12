@@ -1,0 +1,12 @@
+import java.util.LinkedList;
+import java.util.List;
+
+public class Desafio {
+
+	List<String> x = new LinkedList<>();
+	letras.
+	
+	letras.forEach(letra -> {
+		System.out.println(letra);
+	})
+}

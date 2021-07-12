@@ -1,0 +1,6 @@
+
+public class QualColecaoUsar {
+	public static void main(String[] args) {
+		Collection<Alura> alunos = new HashSet<>();
+	}
+}

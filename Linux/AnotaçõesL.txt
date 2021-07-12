@@ -1,0 +1,169 @@
+Parte 1
+
+    pwd -> diretório atual
+
+    ls -> lista de arquivos do diretório atual
+        ls -l -> mostra a lista de arquivos de diretório atual detalhadamente
+        ls -a -> mostra a lista de arquivos de diretório atual incluindo arquivos ocultos
+        ls * -> mostra a lista de arquivos de todos diretórios dentro do diretório atual
+
+    echo -> retorna algo digitado
+        echo XXXX > arquivo.txt -> grava em um arquivo algo digitado
+        echo XXXX >> arquivo.txt -> adicionar algo digitado em um arquivo já criado
+
+    cat arquivo.txt -> lê no terminal o conteúdo do arquivo
+        cat *.txt -> lê todos os arquivos com a extensão selecionado
+        cat -n -> além de ler o arquivo, mostra as linhas do conteúdo
+
+    man COMANDO -> help
+    help COMANDO ou COMANDO --help -> ajuda sobre o comando
+
+    clear ou CTRL + L -> limpar terminal
+
+    whoami -> nome do usúario no Linux
+
+    cd DIRETORIO -> muda o diretório atual
+        cd .. -> retornar ao diretório anterior
+        cd ~/DIRETORIO -> O til leva ao atalho do diretório do usuário
+
+    mkdir DIRETORIO -> criar um diretório novo
+
+    rmdir DIRETORIO -> apaga o diretório digitado se ele estiver vazio
+        rm ARQUIVO -> apaga o arquivo digitado
+        rm -r DIRETORIO -> apaga o diretório digitado mesmo se não estiver vazio
+
+    cp ARQUIVO1 ARQUIVO2 -> copiar um arquivo1 e ser nomeado arquivo2
+        cp -r DIRETORIO1 DIRETORIO2 -> copiar um diretório1 e ser nomeado diretório2
+
+    mv ARQUIVO1 ARQUIVO2 -> renomeando um arquivo1 em arquivo2
+        mv ARQUIVO DIRETORIO -> movendo um arquivo para um diretório
+
+    zip -r ZIP DIRETORIO -> criar um arquivo .zip usando um DIRETORIO e todos seus arquivos
+        zip -q ZIP -> para mostrar 0% detalhos do zip
+        unzip -l ZIP->  extrair os arquivos de um arquivo zipado
+        unzip -q ZIP -> para mostrar 0% detalhes do unzip
+
+    tar -cz DIRETORIO > ZIP.tar.gz -> Compactar em um arquivo menor usando o TAR
+        tar -czf ZIP.tar.gz DIRETORIO -> """
+        tar -xc < ZIP.tar.gz -> Descompactar os arquivos do TAR
+        tar -xcf ZIP -> ""
+    .gz ou .bz2 -> -czf ou -cjf
+
+    touch -> apenas altera a ultima data de modificação
+
+    date -> data e horário atual
+
+    -v -> verbose unzip
+    -q -> quiet unzip
+
+    head ARQUIVO -> lê e mostra no terminal as 10 primeiras linhas do arquivo
+        head -n LINHAS ARQUIVO -> lê e mostra no terminal um número determinado de linhas iniciais
+
+    tail ARQUIVO - lê e mostra no terminal as 10 ultimas linhas do arquivo
+        tail -n LINHAS ARQUIVO -> lê e mostra no terminal um número determinado de linhas finais
+
+    less ARQUIVO -> mostra o arquivo na tela e com as setas consegue manipular a visualização do arquivo
+
+    vi ARQUIVO.txt -> editor de texto no terminal, manipula a visualização nas setas
+        i -> para digitar na posição anterior
+        a -> para digitar na posição posterior
+        A -> para digitar no final da linha
+        x -> apagar o caracter atual
+        numx -> apagar um número de linhas
+        dd -> apagar uma linha
+        gg -> vai pra primeira linha
+        G -> vai pra ultima linha
+            X G -> vai pra linha X
+        0 - $ -> vai pro inicio da linha - vai pro final da linha
+        /PESQUISA -> procura a palavra digitada apos barra
+            n -> para navegar nas ocorrencias
+            N -> para voltar na ocorrencia anterior
+        yy -> copiar uma linha
+            X yy -> copiar X linhas
+        p -> colar a linha copiada
+            X p -> colar X vezes da linha copiada
+        :w -> salvar
+        :q -> sair
+        :wq -> salvar e sair
+        :q! -> sair sem salvar
+
+Parte 2
+
+    ps -> mostra os processos sendo executados pelo terminal
+        pstree -> mostra todos os processos e sua árvore
+        ps -e -> mostra todos os processos
+        ps -ef -> mostra todos os processos detalhadamente
+
+    top -> mostra todos os processos atualizando de tempos em tempos
+        top -u USUARIO -> mostra todos os processos de um usuário
+        top -p IDPROCESSO -> mostra informações sobre um processo escolhido
+
+    PROGRAMA -> inicia no foreground o programa digitado
+        CTRL + Z -> parar o programa iniciado
+        CTRL + C -> kill no programa que está rodando no background
+        fg NPROGRAMA -> faz um programa ir para o foreground usando seu número do jobs
+        bg NPROGRAMA -> faz um programa ir para o background usando seu número do jobs
+        PROGRAMA & -> inicia no background o programa digitado
+
+    jobs -> mostra todos programas iniciado pelo terminal
+
+    grep KEYWORD -> localiza apenas oque contém a palavra-chave digitada
+
+    kill IDPROCESSO -> Fecha o proceso mas o deixa decidir se realmente será encerrado
+        kill -9 IDPROCESSO -> Fecha o processo sem chance de ser recuperar e sem opção se ira ou não encerrar
+        killall NOMEPROCESSO -> Fecha todos os processos com o nome digitado
+    
+    d -> diretorio / r -> read / w -> write / x -> execute
+
+    sh ARQUIVO -> lê um programa ou um arquivo usando o bash
+
+    chmod +MODO ARQUIVO -> habilita o modo(r-w-x) desejado no arquivo para o usúario atual
+        chmod -MODO ARQUIVO -> desabilita o modo(r-w-x) desejado no arquivo para o usuário atual
+        chmod o-MODO ARQUIVO -> desabilitar o modo(r-w-x) desejado no arquivo para outros usuários
+
+    locate PALAVRACHAVE -> localizar o diretório de algum programa
+
+    sudo COMANDO -> executar qualquer comando como SUPER USUÁRIO
+        sudo updatedb -> atualizar a database de diretórios do sistema
+
+    which PALAVRACHAVE -> procura o programa que é executado quando digitado essa PALAVRACHAVE no terminal
+
+    USUARIO passwd -> trocar a senha do usuário digitado
+
+    su USUARIO -> logar com qualquer usuário digitado
+
+    adduser USUARIONOVO -> criar um novo usuário
+
+    env -> As variáveis de ambiente são variáveis globais que podemos utilizar para definir configurações, personalizar nosso terminal.
+
+    PATH=$PATH:/DIRETORIO -> Fazer o terminal atual configurar um PATH
+        $PATH = DIRETORIOATUAL
+        .bashrc -> arquivo que é rodado toda vez que o terminal é iniciado
+
+    wc -w ARQUIVO -> mostra os números de palavras dos arquivos
+        wc -wc ARQUIVO -> mostra o número de palavras e caracteres do arquivo
+        COMANDO | wc -l -> mostrar a quantidade de palavras
+
+    apt - gerenciamento de pacotes
+        sudo apt -get update -> atualizar o sitemas
+        apt-get intall PROGRAMA -> instalar um programa no sistema
+        apt-get remove PROGRAMA -> deinstalar um progama do sistema
+        apt-cache search PROGRAMA -> pesquisa de um programa para instalar no sistema
+
+    dpkg -i PROGRAMA.deb -> instalar um programa .deb que está em alguma pasta do seu computador
+        dpkg -r PROGRAMA -> deinstalar um programa
+
+    sudo service SERVIÇO start -> iniciar um serviço do sistema
+        sudo service SERVIÇO stop -> parar um serviço do sistema
+        sudo service SERVIÇO status -> ver o status de um serviço do sitema
+
+    ls /etc/init.d -> mostra os serviços que são abertos quando sua maquina inicia
+
+    INSTALAR UM PACOTE USANDO O CODIGO-FONTE: 
+        ./configure -> arquivo configure para configurar e setar as dependencias do pacote
+        make -> ver qual arquivos precisam ser compilados
+        make install -> instalar o pacote
+
+    sudo apt-get install ssh -> O SSH conecta com o terminal de um servidor remoto
+        ssh USUARIO@SERVIDOR -> conectar em algum usuário de um servidor
+        scp ARQUIVO USUARIO@SERVIDOR:~/ -> copiar um arquivo para o servidor digitado

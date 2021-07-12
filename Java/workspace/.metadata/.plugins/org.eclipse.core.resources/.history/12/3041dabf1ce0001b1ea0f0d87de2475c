@@ -1,0 +1,10 @@
+package br.com.alura.bytebank;
+import bytebank-1.0.jar
+
+public class TesteBiblioteca {
+
+	public static void main(String[] args) {
+		Conta c = new ContaCorrent(123, 321);
+	}
+
+}
