@@ -40,3 +40,24 @@ Herança multiplas - não poder herdar multiplas classes pai
 
 Interface -> São como contratos que as outras classes assinam que irão preencher seus metodos abstratos
 
+Funciton Object -> objetos que só encapsusla uma função/metodo
+
+---- INTEGER ---
+
+Integer -> Criado para substituir o tipo primitivo int
+
+Integer num = Integer.valueOf(int) -> transformar em integer um valor de tipo primitivo int
+
+int num = numInteger.intValue() -> transformar em int um valor do tipo Integer
+
+String num = Integer.parseInt(numString) -> transformar uma String em int
+
+---- Wrappers ---
+
+Wrappers são as classes que "embrulham" os tipos primitivos
+
+Encapsualmento dos tipos primitivos
+
+autoboxing -> inserir em uma referencia um valor de tipo primitivo
+
+unboxing -> retirar de dentro da referencia o valor de tipo primitivo

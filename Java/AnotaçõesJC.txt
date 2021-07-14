@@ -41,6 +41,10 @@ lista.sort(Comparator.comparing(elemento::funçãoGET)); -> usado para sortear a
 
 Metodo ToString dos objetos é modificado para mostrar oque desejamos quando damos print
 
+Interface Comparator -> cria-se uma classe implementando essa interface para ser usado como criterio de comparação
+
+Interface Comparable -> implementa-se em uma classe para ser a ordem natural dela ou seja ela mesma decidir os criterios de ordenação
+
 --------- SET ---------
 
 import java.util.Set -> Interface usada para criação de conjunto de elementos

@@ -8,6 +8,7 @@ INDEX VERSION 1.131+C:\Users\william.brito\Documents\Drive\Files\3 - Alura\Forma
 26406044.index
 312150970.index
 1557630702.index
+2016769120.index
 1374762053.index
 2704060503.index
 2174185088.index

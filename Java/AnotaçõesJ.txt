@@ -57,7 +57,8 @@ Laço de Repetição:
 Como randomizar um numero em uma range determinada -> random.nextInt((max - min) + 1) + min;
 
 Equals:
-    Usado no lugar do (==) pois pode conflitr entre objetos
+    Usado no lugar do (==) pois pode conflitar entre objetos
+    Deve ser reescrito para comparação entre objetos
 
 Thread -> São usadas para executar dois ou mais procedimentos internos do programa ao mesmo tempo ou seja executar algo paralelamente
 
@@ -133,6 +134,17 @@ Para inicilizar uma array é apenas colocar -> Tipo[] Array = new Tipo[Quantidad
 
 Valor padrão de uma referencia é null
 Valor padrão de um int é 0
+
+String[] args -> é utilizado para passar parametros quando o main é rodado no terminal
+
+Number é a classe mãe de todos wrappers que usam numeros como Float, Double, Integer
+
+----- LAMBA EXPRESSION ----
+
+Como usar uma expressão lamba - ( PARAM -> function )
+                                ( PARAM -> {return function})
+
+lista.forEach( ELEMENTO -> function)
 
 ---- Maven ----
 
