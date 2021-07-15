@@ -139,13 +139,48 @@ String[] args -> é utilizado para passar parametros quando o main é rodado no 
 
 Number é a classe mãe de todos wrappers que usam numeros como Float, Double, Integer
 
------ LAMBA EXPRESSION ----
+----- LAMBDA EXPRESSION ----
 
-Como usar uma expressão lamba - ( PARAM -> function )
+Como usar uma expressão lambda - ( PARAM -> function )
                                 ( PARAM -> {return function})
 
 lista.forEach( ELEMENTO -> function)
 
----- Maven ----
+-------- Maven --------
 
-Estrutra que organiza todas dependencia e bibliotecas
+https://mvnrepository.com/
+
+Estrutra que organiza todas dependencia e bibliotecas/ Facilita o build de uma aplicação JAVA
+
+APACHE ANT -> automatiza a compilaçã e facilita o trabalho da build de uma aplicação java
+APACHE IVY -> facilita o gerenciamento das dependencias usando um arquivo xml
+
+APACHE MAVEN -> ant + ivy
+
+src/main/java -> Diretorio usado para armazenar os arquivos .java
+src/main/resources -> Geralmente nesse diretorio ficam os arquivos de configurações
+src/test/java -> Diretorio usado para armazenar os arquivos de test com junit
+src/test/resources -> Diretorio usado para armanezar os arquivos de test automatizado
+
+Usar o Junit para criar testes
+
+<GroupID>Id unico para empresa/grupo</GroupID>
+<ArtifactId>Nome da aplicação</ArtifacTID>
+<Version>Versão da Aplicação</Version>
+
+Para adicionar dependencias com o maven é so usar as tags Dependency
+
+.m2/repository -> onde fica todas as dependencias baixadas pelo maven
+
+commands - goals
+    mvn compile -> compilar o projeto
+    mvn clean -> checar a build
+    mvn test -> rodar um teste automatico criado com o junit
+    mvn package -> fazer a build do projeto
+    mvn install -> instala o projeto nos repositorios do maven como .jar
+    mvn deploy -> 
+
+Para configurar um proxy é necessario criar um settings.xml no .m2 do maven e usar as tags de proxy
+
+Modulos no maven -> configurar no pom.xml usando tags modules - BOM USO PARA MICROSERVIÇOS
+No projeto filho é necessario colocar no seu pom.xml a tag parent para determinar quem é o projeto pai da aplicação JAVA
