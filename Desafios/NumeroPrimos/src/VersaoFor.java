@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class VersaoNova {
+public class VersaoFor {
 
     public static void main(String[] args) {
 
@@ -14,10 +14,8 @@ public class VersaoNova {
             for (int divisor = 2; divisor <= primo; divisor++) {
                 if (primo % divisor == 0 && primo != divisor) {
                     break;
-                } else {
-                    System.out.println(primo);
+                } System.out.println(primo);
                     break;
-                }
             }
         }
     }
