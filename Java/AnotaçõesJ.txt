@@ -211,7 +211,7 @@ Switch com cada caso usando expressão lambda EXEMPLO - Switch(var) {
                                                             default -> function
                                                         }
 
-
+JSHELL -> Usado para facilitar teste de codigos usando o command shell
 
 -------- Maven --------
 

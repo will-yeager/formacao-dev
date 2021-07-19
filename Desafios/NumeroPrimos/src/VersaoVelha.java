@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class Controller {
+public class VersaoVelha {
 
     public static void main(String[] args) {
 
-        int num, primo;
+        int num;
         Scanner entrada = new Scanner(System.in);
 
         System.out.println("Digite um número: ");
