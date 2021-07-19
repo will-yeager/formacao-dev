@@ -40,7 +40,10 @@ Herança multiplas - não poder herdar multiplas classes pai
 
 Interface -> São como contratos que as outras classes assinam que irão preencher seus metodos abstratos
 
-Funciton Object -> objetos que só encapsusla uma função/metodo
+Function Object -> objetos que só encapsusla uma função/metodo
+
+METODO DEFAULT -> permite adicionar métodos a uma interface qie não necessariamente necessitam de implementação
+
 
 ---- INTEGER ---
 
@@ -61,3 +64,4 @@ Encapsualmento dos tipos primitivos
 autoboxing -> inserir em uma referencia um valor de tipo primitivo
 
 unboxing -> retirar de dentro da referencia o valor de tipo primitivo
+

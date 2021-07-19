@@ -146,6 +146,73 @@ Como usar uma expressão lambda - ( PARAM -> function )
 
 lista.forEach( ELEMENTO -> function)
 
+So funciona quando a interface retornar algo e precisar de parametros, ou seja ser uma interface funcional
+
+METHOD REFERNCE -> um jeito mais curto de usar a expressãp lambda para chamar um metodo. EXEMPLO : System.out::println;
+
+---- STREAM ------
+
+lista.stream() -> invocação do metodo stream
+
+lista.stream().filter(boolean response) -> filtra de acordo com a condição estabelecida
+
+lista.stream().map(method reference) -> transforma a stream em alguma lista do tipo determinado pela method reference
+
+lista.stream().forEach(method reference) -> faz uma ação para cada elemento da lista
+
+int sum = lista.stream().sum() -> soma todos os valores da stream
+
+OptionalDouble media = lista.stream().average() -> média dos valores da stream
+
+lista.stream().findAny() -> encontra qualquer elemento da lista que condiz com a condição
+
+lista.stream().findFirst() -> encontra o primeiro elemento da lista que condiz com a condição
+
+lista.stream().ifPresent() -> se o objeto for encontrado e não nulo, executa uma ação
+
+cursos = lista.stream().collect(Collectors.toList()) -> Transforma a stream em uma lista
+
+Map<tipo1, tipo2> map cursos.stream().collect(Collector.toMap(chave, valor));
+
+------- DATE ---------
+
+Api de Datas -> import java.time.*;
+
+LocalDate.now() -> Devolve a data atual
+
+LocalDatimeTime -> Devolve a data atual com horario
+
+LocalDate.of(year, month, day) -> Devolve uma data determinada pelo desenvolvedor
+
+data.getYear() -> Devolve o ano de uma determinada data
+
+Period.between(data1, data2) -> Devolve o periodo entre duas Datas
+
+data.plusYears(x) -> Aumenta o número do ano de determinada data
+
+DataTimeFormatter.ofPattern("dd/MM/yyyy") -> Instancia um formato de data
+
+data.format(formatter) -> Devolve a data no formatado instanciado
+
+LocalTime.of(hora, minuto) -> Devolve o horario determinado pelo desenvolvedor
+
+----- NOVIDADES DO JAVA MODERNO ----
+
+List.of(elementos) -> Cria uma lista imutavel com elementos pre-determinados
+
+Array.asList(elementos) -> Cria uma lista com tamanho imutavel mas podendo modificar seus elementos
+
+var Classe -> Um jeito menos verboroso de se criar um objeto mas funciona apenas em casos especificos
+
+Text Block -> Usado para textos já pré formatados e para instancia-lo é só usar 3 aspas no inicio e no fim
+
+Switch com cada caso usando expressão lambda EXEMPLO - Switch(var) {
+                                                            case 1 -> function
+                                                            default -> function
+                                                        }
+
+
+
 -------- Maven --------
 
 https://mvnrepository.com/
