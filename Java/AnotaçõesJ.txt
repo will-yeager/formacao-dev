@@ -213,7 +213,26 @@ Switch com cada caso usando expressão lambda EXEMPLO - Switch(var) {
 
 JSHELL -> Usado para facilitar teste de codigos usando o command shell
 
--------- Maven --------
+SUBSCRIBER, PUBLISHER, SUBSCRIPTION -> THREADS ( PESQUISA MAIS )
+
+----------- HTTP ------------
+
+Requisição sincrona e bloqueante -> Quando uma requisição é enviada não é possivel enviar outras requisições até que a requisição atual seja finalizada
+
+Requisição assincrona e não-bloqueante -> É possivel enviar varias requisições e cada uma retorna a resposta quando estivere pronta.
+
+Estrutura completa de uma requisição sincrona :
+    HttpClient httpClient = HttpClient.newHttpClient();
+    HttpRequest httpRequest = HttpRequest.newBuilder(new URI("URL)).GET().build();
+    HttpResponse<String> resp = httpClient.send(httpRequest, BodyHandlers.ofString());
+    resp.statusCode -> Status da requisição
+    resp.body -> Corpo da requisição no caso o HTML
+
+Estrutra completa de uma requisição assincrona :
+    httpClient.sendAsync(HttpRequest.newBuilder().uri(new URI("URL")).GET().build(), BodyHandlers.ofString())
+    .whenComplete((s, t)) -> System.out.println(s.body()));
+
+------------ Maven -----------
 
 https://mvnrepository.com/
 

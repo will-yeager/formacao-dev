@@ -37,4 +37,19 @@
     <fullyQualifiedTypeName name="java.time.LocalTime"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.net.URL"/>
+    <fullyQualifiedTypeName name="java.net.URLConnection"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.net.http.HttpClient"/>
+    <fullyQualifiedTypeName name="java.net.http.HttpRequest"/>
+    <fullyQualifiedTypeName name="java.net.URI"/>
+    <fullyQualifiedTypeName name="java.net.http.HttpResponse"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.CompletableFuture"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.SubmissionPublisher"/>
+    <fullyQualifiedTypeName name="br.com.alura.wsclient.NotaFiscalWSClient"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
+    <fullyQualifiedTypeName name="br.com.alura.subscriber.NotaFiscalSubscriber"/>
+    <fullyQualifiedTypeName name="br.com.alura.nf.util.NotaFiscalUtil"/>
+    <fullyQualifiedTypeName name="br.com.alura.nf.servico.NotaFiscalServico"/>
 </qualifiedTypeNameHistroy>
