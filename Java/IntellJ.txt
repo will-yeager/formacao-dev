@@ -1,0 +1,44 @@
+Curso IntellJ
+
+Alt + 1 -> Project view
+Alt + Home -> Bar view
+Alt + F7 _> Find where the element is used
+Alt + F8 -> Evaluate Expression
+Alt + Insert -> New.../Generate Code
+Alt + Shift + 10 -> Run project
+Alt + Enter -> Suggestions of IntellJ
+Alt + Setas -> Moving along tabs
+Alt + Shift + X -> Close all tabs
+Alt + Shift + Enter -> Column selector
+Alt + Shift + Setas -> Move Line
+
+Ctrl + ALt + L -> Format code
+Ctrl + Alt + V -> Local variable template
+Ctrl + Alt + F -> Atribute variable template
+Ctrl + Alt + T -> Templates
+Ctrl + Shift + Alt + T -> Refactor this
+Ctrl + Shift + Alt + S -> Project Structure
+
+Ctrl + Shift + A -> Search Everything of IntellJ
+Ctrl + Shift + setas -> Move line without get in out of escope
+Ctrl + Shift + F -> Search in files
+Ctrl + Shift + F6 -> Type migration
+Ctrl + Alt + M -> Move everything select to a method
+Ctrl + D -> Duplicate Line
+Ctrl + Y -> Delete line
+Ctrl + B -> Go to the origin of anything
+Ctrl + N -> Go to a another class
+Ctrl + E -> List of recents files
+Ctrl + H -> Hierarchy of the element
+Ctrl + J -> Live Templates
+Ctrl + F4 -> Close tab
+Ctrl + F12 -> Methods of the class
+
+Shift + Shift -> Search ALL
+Shift + F6 -> Refactor variable
+Shift + F10 -> Run Code
+Shift + F9 -> Debug
+F6 -> Move
+
+psvm -> Method main
+sout -> System.out.println()
