@@ -42,3 +42,8 @@ F6 -> Move
 
 psvm -> Method main
 sout -> System.out.println()
+
+LIVE Templates
+
+$END$ -> Onde a linha do mouse/teclado vai parar no final da ação
+$SELECTION$ -> Onde oque estava selecionado vai parar

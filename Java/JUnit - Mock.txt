@@ -1,0 +1,24 @@
+---- Curso JUnit ----
+
+Biblioteca padrão para escrita de testes automatizados em Java
+
+TDD - Test Driven Development
+   CICLO( Teste -> Implentação -> Refatoração )
+
+assertEquals(param1, param2) -> Verifica se os dois parametros são iguais
+
+assertThrows(exception.class, function) -> Verifica se o resultado de uma função retorna uma exceção
+
+@Test -> Metodos de testes
+
+@BeforeEach -> Marcar um metodo parainicializar antes de cada um dos testes
+@AfterEach -> Marcar um metodo para inicializar depois de cada um dos testees
+
+@BeforeAll
+@AfterAll
+
+Não se deve testar metodos privados
+
+Uma boa pratica é apenas testar as classes que possuem regras de negocios
+
+---- Curso Mock ----

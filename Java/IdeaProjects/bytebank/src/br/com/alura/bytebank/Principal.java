@@ -11,8 +11,6 @@ import java.util.logging.Logger;
 
 public class Principal {
 
-    final static Logger logger = Logger.getLogger(Principal.class);
-    
     public static void main(String[] args) throws IOException {
         //new OpcoesPagamento().mensagemDeBoasVindas();
 
