@@ -9,6 +9,10 @@ assertEquals(param1, param2) -> Verifica se os dois parametros são iguais
 
 assertThrows(exception.class, function) -> Verifica se o resultado de uma função retorna uma exceção
 
+assertTrue(boolean) -> Verifica se o resultado de uma função retorna verdadeiro
+
+assertFalse(boolean) -> Verifica se o resultado de uma função retorna falso
+
 @Test -> Metodos de testes
 
 @BeforeEach -> Marcar um metodo parainicializar antes de cada um dos testes
@@ -22,3 +26,26 @@ Não se deve testar metodos privados
 Uma boa pratica é apenas testar as classes que possuem regras de negocios
 
 ---- Curso Mock ----
+
+"Classe que simula os comportamentos de outra classe" -> Quando uma classe necessita 
+de dependencias externas para rodar o mock simula essas dependencias para fazer o teste apenas da que é dependete da outras
+
+Mockito.mock(ClassSimulada.class) -> Criando uma classe para ser simulado usando o mockito
+
+@Mock -> Sinaliza os atributos do mock
+
+MokitoAnnotations.initMock(this) -> Metodo para iniciar os atributos mocks da @Mock
+
+Mockito.when(mock.method()).thenReturn(object) -> Metodos para controlar o comportamente de metodo do mock
+
+Mockito.when(mock.metodo()).thenThrow(Exception.class) -> Simular uma exception quando um metodo da classe mock é chamado
+
+Mockito.verify(mock.class).method() -> Verificar se um metodo especifico do mock foi chamado durante o teste
+
+Não é possivel criar mock usando metodos estaticos.
+
+@Captor -> Sinaliza quando o desenvolvedor deseja capturar um parametro que é produzido dentro do metodo da classe mock.
+
+captor.capture() -> Captura o captor sinalizado anteriormente
+
+captor.getValue() -> Utilizar o captor ou até instacia-lo em uma variavel
