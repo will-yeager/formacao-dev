@@ -48,4 +48,4 @@ Não é possivel criar mock usando metodos estaticos.
 
 captor.capture() -> Captura o captor sinalizado anteriormente
 
-captor.getValue() -> Utilizar o captor ou até instacia-lo em uma variavel
+captor.getValue() -> Retorna o captor para ser utilizado ou até instacia-lo em uma variavel  

@@ -1,7 +1,10 @@
+command=C\:\\Users\\william.brito\\.p2\\pool\\plugins\\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205\\jre\\bin\\javadoc.exe
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="br.com.bytebank.banco.modelo.Conta"><rhs name\="br.com.bytebank.banco.modelo.ContaPoupanca"/></lhs><lhs name\="br.com.bytebank.banco.modelo.ContaPoupanca"><rhs name\="br.com.bytebank.banco.modelo.ContaPoupanca"/></lhs><lhs name\="java.time.temporal.TemporalAccessor"><rhs name\="java.time.Month"/></lhs><lhs name\="java.time.temporal.TemporalAdjuster"><rhs name\="java.time.Month"/></lhs><lhs name\="java.lang.Enum"><rhs name\="java.time.Month"/></lhs><lhs name\="java.lang.constant.Constable"><rhs name\="java.time.Month"/></lhs><lhs name\="java.util.concurrent.Flow$Publisher"><rhs name\="java.util.concurrent.SubmissionPublisher"/></lhs><lhs name\="java.lang.AutoCloseable"><rhs name\="java.util.concurrent.SubmissionPublisher"/></lhs><lhs name\="java.util.concurrent.SubmissionPublisher"><rhs name\="java.util.concurrent.SubmissionPublisher"/></lhs><lhs name\="br.com.alura.wsclient.NotaFiscalWSClient"><rhs name\="br.com.alura.wsclient.NotaFiscalWSClient"/></lhs></history>
 content_assist_number_of_computers=12
-content_assist_proposals_background=255,255,255
-content_assist_proposals_foreground=0,0,0
 eclipse.preferences.version=1
+markOccurrences=false
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
 org.eclipse.jdt.ui.formatterprofiles.version=21
 spelling_locale_initialized=true
 useAnnotationsPrefPage=true

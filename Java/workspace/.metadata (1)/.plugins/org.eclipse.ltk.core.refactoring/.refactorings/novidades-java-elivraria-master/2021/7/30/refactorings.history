@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;LivroDAO.java&apos; to &apos;dao&apos;" description="Move &apos;LivroDAO.java&apos; to &apos;dao&apos;" destination="src/br.com.alura/br/com/alura/http/dao/br/com/alura/http/dao" element1="src/br.com.alura/br/com/alura/http/dao/LivroDAO.java" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1626796203681" updateReferences="true"/>
+</session>

@@ -1,0 +1,20 @@
+------ S.O.L.I.D --------
+
+Single Responsibility Principle -> "Uma classe deveria ter apenas um unico motivo para mudar"
+
+Open Closed Principle -> "Entidades de software(classes, modulos, funções, etc.) devem estara abertas para extensão porem fechadas para modificação"
+ 
+Liskov Substitution Principle -> "Um pato de borracha não é necessariamente igual a um pato de verdade"
+                                "devemos poder substituir classes base por suas classes derivadas em qualquer lugar, sem problema."
+
+Interface Segregation Principle -> "Uma classe não deveria ser forçada a depender de métodos que não utilizara"
+
+Dependency Inversion Principle -> "Abstrações não devem depender de implementações. Implementações devem depender de Abstrações"
+
+Coesão - Encapsulamento - Acoplamento
+
+------ Design Patterns ------
+
+"Solução comum para um problema recorrente ao utilizar o paradigma da orientação a objetos"
+
+Comportamentais :

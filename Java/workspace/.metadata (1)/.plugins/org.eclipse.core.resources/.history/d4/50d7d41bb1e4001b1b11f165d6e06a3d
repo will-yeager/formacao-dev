@@ -1,0 +1,55 @@
+package br.com.bytebank.banco.test.util;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+import br.com.bytebank.banco.modelo.Conta;
+import br.com.bytebank.banco.modelo.ContaCorrente;
+import br.com.bytebank.banco.modelo.ContaPoupanca;
+
+public class TesteOrdenar {
+
+	public static void main(String[] args) {
+		Conta cc = new ContaCorrente(111, 111);
+		cc.deposita(100.0);
+
+		Conta cp = new ContaPoupanca(222, 222);
+		cp.deposita(200.0);
+
+		Conta cc3 = new ContaCorrente(22, 11);
+		cc3.deposita(300.0);
+
+		List<Conta> lista = new ArrayList<>();
+
+		lista.add(cc);
+		lista.add(cp);
+		lista.add(cc3);
+		
+		ordenador ordenar = new ordenador();
+
+		System.out.println(lista);
+		for (Conta conta : lista) {
+			System.out.println(conta);
+		}
+		lista.sort(ordenar);
+		System.out.println(lista);
+	}
+
+}
+
+class ordenador implements Comparator<Conta> {
+
+	@Override
+	public int compare(Conta o1, Conta o2) {
+		if (o1.getNumero() < o2.getNumero()) {
+			return -1;
+		}
+
+		if (o1.getNumero() > o2.getNumero()) {
+			return 1;
+		}
+		return 0;
+	}
+
+}
