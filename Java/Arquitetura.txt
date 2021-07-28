@@ -18,3 +18,42 @@ Coesão - Encapsulamento - Acoplamento
 "Solução comum para um problema recorrente ao utilizar o paradigma da orientação a objetos"
 
 Comportamentais :
+
+    Strategy ->
+        Problema - Alto numero de condicionais em uma classe ou no projeto em si
+        Solução - Separa-las em classes que possuam suas estrategias especificas e serem independentes entre elas
+
+    Chain of Responsibility -> Passar o problema nivel por nivel exemplo: Mandar o atentende chamar o Gerente mandar o Gerente chamar o Diretor
+        Problema -
+        Solução - 
+
+    Template Method -> Pesquisar melhor
+
+    Sate -> 
+        Problema - Alto numero de condicionais para determinação dos estados de um programa 
+
+        Solução - Dando a responsabilidade para o controle de estados a metodos e classes
+
+    Command ->
+        Ter uma classe apenas para os comandos, quando é necessario a criação de uma interface de interação com usuario e que usa requisições
+
+    Observer ->
+        Inversão de controles. Pesquisar melhor
+
+Estruturais :
+    
+    Adapter ->
+        É um padrão de projeto estrutural que permite objetos com interfaces incompatíveis colaborarem entre si.
+
+    Decorator ->
+        Exemplo: Decorando a arvore de natal com pisca pisca, estrelas isso é o padrão decorator
+
+    Composite ->
+        O Composite é um padrão de projeto estrutural que permite que você componha objetos em estruturas de árvores e então trabalhe com essas estruturas como se elas fossem objetos individuais.
+        Utilizando as interfaces fazer objetos simples e complexos serem tratados de maneira uniforme
+
+    Facade ->
+        Omitir metodos/detalhes internos das classes. Uma interface de uso para usuario mais simplificada . Classe de fachada
+
+    Proxy ->
+        Interceptar um valor/classe para fazer validação, perfomace guardando em um proxy
