@@ -1,5 +1,0 @@
-module br.com.alura.modelo {
-	
-	exports transitive br.com.alura.modelo.dominio;
-	
-}
