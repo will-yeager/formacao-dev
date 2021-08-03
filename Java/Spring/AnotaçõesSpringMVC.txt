@@ -1,0 +1,113 @@
+objetivo - contatos virar uma API - 1 week
+
+https://start.spring.io -> Criar um projeto spring
+
+Spring MVC -> Facilita o trabalho com o protocolo HTTP e criação de HTML dinamicamente
+
+Actions são metodos que retornam o nome da view, que vai gerar uma página HTML.
+
+@Controller -> Anotação para definir uma classe que tera actions
+@GetMapping("view") -> Anotação para mapear essa acition. Folder é o nome da pagina html que deve ser o mesmo nome da action
+@RequestMapping("view") -> Anotação para definir que todas requisições para view deve passar por esse controller
+
+@Valid -> Validar os erros inseridos no model
+    
+@NotBlank -> Anotação para validar se o atributo do formulario está em branco/null
+    Em um arquivo messages.properties define as mensagens de cada erro:
+        NotBlank.requisicaoNovoPedido.nomeProduto=O campo nome do produto é obrigatório
+
+@ExceptionHandler(Exception.class) -> Define um metodo ou classe para o caso de ocorrer uma exceção
+
+@PathVariable("variavel") -> Define uma variavel para o path/caminho(action, pag HTML)
+
+HttpServletRequest request -> Parametro para criação de uma request
+request.setAttribute(param1, param2) -> Fazer uma requisação para mudar um atributo da view
+
+Model model -> Parametro para o uso do modelo na action
+model.addAttribute(param1, param2) -> Fazer uma requisação para mudar um atributo da view
+
+ModelAndView -> ModelandView mv = new ModelView("view") -> mv.addobject(param1, param2) -> return mv
+
+DTO -> DTO (Data Transfer Object) 
+
+redirect -> client-side || forward -> server-side
+
+------- Banco de Dados e Spring --------
+
+    @PersistenceContext -> Anotação para definir o uso da persistencias
+    @Repository -> Anotação para definir um repositorio
+    @AutoWired -> Anotação para indicar ao Spring que o objeto anotado é um componente ou Bean dele e que queremos que ele nos dê uma instância por meio do recurso de injeção de dependência.
+
+    EntityManager -> Objeto para definir um serviço central para todas actions de persistencia
+
+    entitymanager.createQuery("requisição ao banco de dados", Classe.class)
+    query.getResultList() -> Retorna a resposta da requisição
+
+-------- Spring Data ---------
+
+interface ClasseRepository extends JpaRepository<Classe, TipoDeId> -> Implementar como classe pai o jparepository que dara varios metodos utils como FindAll()
+
+Tipo findByvarEnum(Enum varEnum) -> Filtra uma classe usando enum e retorna o tipo definido
+
+return "redirect:/action" -> Faz o redirecionamento pelo Spring MVC
+
+Sort.by("atributo").modo() -> Sortear usando como parametro um atributo e um metodo de modo de sort
+
+PageRequest.of(page, size, sort) -> Limitar o numero de request por pagina e usar um sorte nessas requests
+
+@EnableCaching -> Usar o cache na aplicação 
+    @Cacheable -> No metodo do repository que ira usar o cache
+
+-------- Spring Security ---------
+
+@Configuration
+@EnableWebSecurity -> Anotação para habilitar a segurança web, usada na class WebSecurityConfig
+
+Principal principal -> Define o usuario logado
+
+WebSecurityConfigurerAdapter -> Classe mãe da classe de segurança web para herdar toda pre configuração
+
+configure(HttpSecurity http) -> Metodo para definir uma pagina de login e logout
+    .defaultSucessUrl("/page") -> Definir uma página de redirecionamento se ocorrer o sucesso
+    .antMatchers("/publicPages").permitAll() -> Separa as páginas públicas (sem login) das restritas
+
+userDetailsService() -> metodo para criação de um login
+
+BCryptPasswordEncoder -> Objeto para encriptação da senha dos usuarios
+
+SecurityContextHolder.getContext().getAuthentication() -> Encontra o usuario logado
+
+-------- Spring API ---------
+
+@RestController -> Declara uma classe como Rest
+
+Spring gera automaticamento o JSON
+
+Vue.js -> Usar de front end junto com axios para consumir os dados
+
+-----------------------------------------
+
+Thymeleaf:
+    th:text = "${param}" -> Modificiando um texto da view
+    th:src = "${param}" -> Modificando um src da view 
+    th:value = "${param}" -> Modificando um value da view 
+    th:each = "elemento : ${lista}" -> Fazendo um laço for com a view
+    
+    th:object = "${objetoDeUmaClasse}" -> Atribui o formulario a um objetoDeUmaClasse por meio dessa propriedade
+    th:field = "*{atributo}" -> Atribui o input a um atributo do objetoDeUmaClasse já especificada pelo desenvoledor
+    
+    th:errorClass="is-invalid" -> Atribui um tipo de erro quando der erro na classe
+    th:errors="*{atributo}" -> Atribui uma parte do html a aparição de mensagem de erro
+
+    th:fragment="name" -> Define um nome para o fragmento do codigo repetido HTML
+    th:replace="~{base :: name}" ->  Implementa o codigo base definido em outro arquivo HTML
+
+    <th:block> -> definir um bloco de th como por exemplo th de swtich e cases
+    th:switch="${variavel}" -> Define um switch usando uma variavel
+    th:case="CASES" -> Define um caso para tudo que estiver dentro dessa tag
+
+    th:action="@{/pedido/novo}" -> links relativos
+    Para formatar qualquer variavel com thymeleaf apenas ir na documentação UTILITY dele
+
+
+FAZER AS ANOTAÇÕES PORRAAAAAA
