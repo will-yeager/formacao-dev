@@ -9,7 +9,7 @@ public class VersaoWhile {
         System.out.println("Digite um número: ");
         numeroDigitado = entrada.nextInt();
 
-        while(numeroDigitado < 0) {
+        while(numeroDigitado > 0) {
             for (int divisor = 2; divisor <= numeroDigitado; divisor++) {
                 if (numeroDigitado % divisor == 0 && numeroDigitado != divisor) {
                     break;
