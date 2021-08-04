@@ -1,0 +1,39 @@
+----- Spring Api -----
+
+Spring converte os dados para o formato JSON utilizando a biblioteca Jackson
+
+@Controller -> Anotação para definir a classe como controller 
+@RestController -> Anotação para definir que todas paginas são responsebody
+@RequestMapping("/") -> Mapea um endpoint do metodo
+    @GetMapping -> Metodo que será chamado no Get
+    @PostMapping -> Metodo que será chamado no Post - Param(@RequestBody param)
+    @PutMapping -> Metodo que será chamado no Put
+        @Transactional -> Anotação para definir que deve salvar no final do metodo
+    @DeleteMapping
+@PathVariable -> Indica o parametro como variavel do path
+@ResponseBody -> Indica que o retorno do método deve ser serializado e devolvido no corpo da resposta
+
+Dto -> Controlar quais atributos/propriedades será enviado ao JSON
+Classes DTO saem do servidor pro client-side a as Classes Form saem do usuario pro servidor
+
+-Spring DATA-
+Repository -> Cria uma interface que herda JpaRepository<TipoDaClasse, TipoDoIdDaClasse>
+
+Para criar uma reposta diferente de 200 é necessario o ResponseEntity
+--
+
+Error NOT FOUND:
+    ResponseEntity.notFound().build();
+
+@Entity
+@Id @GeneratedValue
+@Enumerated
+@ManyToOne
+@OneToMany
+
+Rest:
+    Recursos
+    URI -> Identificador de Recursos
+    Verbos HTTP -> Get, Post, Put, Delete
+    Representação de recursos (Media type) -> JSON XML
+    Stateless -> O servidor não guarda nenhum dado sobre a sessao do cliente no server-side
