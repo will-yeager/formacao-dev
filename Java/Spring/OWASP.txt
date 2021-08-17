@@ -1,0 +1,92 @@
+INJECTION -> Dados devem ser verificados antes de executar qualquer comando concatenado
+    'or admin=true #
+    Solução ->  Uso de bibliotecas para evitar esse tipo de injections - JAVA - PreparedStatement - Hibernate
+
+Authentication Weaknesses -> Senhas serem facilmente quebradas
+    Solução -> Criptografia, Não podendo fazer mais de 5 requisições por um intervalo, Senha obrigatoria a ser forte, Multi-factor authentication, TIME-OUT
+    Credential Recovery, Session id deve expirar
+
+Sensitive DataExposure -> Dados não criptografados em trânsito, Dados não criptografados armazenados
+    Solução -> Https, Não armazenar dados sensiveis, Não cachear páginas que tiver dados sensiveis, Forçar o uso de certificados e a validação dos mesmos, Colocar um nome antes da senha para aumentar a criptografia
+
+XML External Entities -> Acesso de arquivos/rede/ou entupimento de requisições por meio de Entidades do XML
+    Solução -> Usar JSON e evitar usar serielização de dados sensitivos, Whitelist/Filtering dos dados inputados,
+     Criar uma camada de segurança para detectar, monitorar, bloquear esses tipos de ataques
+    
+Broken Acess Control -> controle de acesso quebrado, perigo na modificação da uri
+    Solução -> Recursos publico bloqueados por padrão, Limite o numero de requisições, controle de acesso nas logs, JWT Token
+
+Security Misconfiguration -> Configurações improprias de permissoes de serviços clouds, errors stack traces
+    Solução -> Não colocar feature e frameworks que não irao ser usados, *SECURITY HEADERS*
+
+Cross-site Scripting - Execução de codigos js maliciosos
+    Solução - Escapar em request http não confiaveis, executar js apenas do seu proprio dominio
+
+Insecure Deserialitazion -> Deserialização de qualquer coisa
+    Solução -> Não aceitar objetos serializados de fontes não confiaveis, https, monitorar deserializações
+
+Using Components with Know Vulnerables -> Dependencias desatualizados com vunerabilidades conhecidas
+    Solução -> Controlar a versão dos componentes que você utiliza na aplicação, Apenas obtenha componentes da fonte oficial,
+
+Insufficente Logging and Monitoring -> 
+    Solução -> Cria logs para saber oque aconteceu no programa para monitorar atividades suspeitas, Garantir que essses logs sejam facilmente consumidos por um log management centralizado
+
+Verification OWASP
+
+----ASVS---- https://owasp.org/www-pdf-archive/OWASP_Application_Security_Verification_Standard_4.0-en.pdf
+Level 1
+
+Senha maior que 12 caracteres, multifactor authorization
+Token com tempo limitado, no email enviar apenas o codigo não o link de ativação
+Não enviar senha em texto puro em canal nenhum -> Enviar codigo aleatorio para ativação de conta
+Cookie-based Session Management -> Segurança TLS, cookie flag secure() apenas em HTTPS, HTTPONLY
+SameSite to avoid crosssite attacks
+anti-csrf, single page naviagtion
+deeplinks vulnerability
+input ser extremamente tipado, validado, ter um valor min e max pre determinado
+Sempre que redirecionado fora do seu sistema alertar o usuario
+Verificar se o endereço bate com o cep
+Sanitizar, Desativar , ou usar ambientes controlados para liguagens como hmtl, xml, markdown, css
+Ataque ssrf brecha de não existir validação dos dados assim podendo fazer requisições de role ADMIN
+eval attack
+Dados criptografados em todo o trafego
+Se os logs possuirem dados sensiveis, geralmente possuem, é necessario ter segurança
+Os logs devem ter as informações necessarais para verificação dethalada
+Errors Handler global
+DATA PROTECTION -> MESMO SE ALGUEM INTERCEPTAR NÃO CONSEGUIR LER POR CAUSA DA Criptografia
+Não armazenar dados sensiveis em cache sem criptografia
+Apagar qualquer tipo de session id no client-side na hora do logout
+Usar TLS com HTTPS e se o cliente n suportar a versão mais nova do TLS deve forçar um erro para n funcionar
+Qualquer tipo de comunicação deve usar TLS
+Ter regras para monitorar devidos acontecimentos estranhos no sistema, como numa rede social é casos raros onde uma pessoa recebe milhoes de solicitações
+Coisas não pode fazer em parelelo, que deve ser feito passo a passo como gerar uma nota fiscal mas antes verificar se há estoque
+Arquivos não confiaveis de fontes não confiaveis são armazenados foram do root e com permissoes limitadas
+Não aceitar arquivos grande
+Não aceitar arquivos diretamente no sistema ou framework e forte validação, e o arquivo enviado nunca pode ser executado como conteudo html/js
+Bloquear tipos de arquvios do servidor/codigo-fonte para o usuario não ter acesso
+Scanear esses Arquivos do usuario por antivirus
+Ter uma whitelist dos recursos dos sistemas para cada qual servidor pode enviar requisições ou carregar dados/arquivos
+
+API VALIDATION
+
+Verificar os componentes que deve possuir os mesmo encondings e parsers para evitar attaques de URI como SSRF e RFI attacks
+A parte da Administrativa está limitada apenas para administradores autorizados
+API URL não deve expor informações sensitivas
+
+Restful
+
+JSON schema VALIDATION
+Validação do JSON se tiver algo a mais ou menos dados
+Numa api com recursos protegidos é normal previnir dos usuarios de usar delete/put
+Cookies protegidos de ataques cross-site
+Sempre deve ser valido os dados antes de transformar em objetos
+Verificar se todas dependencias estão totalmente atualizadas
+Usar um validador HHASH para verificar se os dados/files batem
+Debug desativado no modo de produção
+Headers não devem expor qualquer tipo de informação do framework usado 
+Content type explicitvo para o navegador não ativar o content type
+Encoder explicito UTF-8, ISO-8859-1
+Forçar o nome do arquivo da resposta da api
+Apenas poder rodar arquivos/dados apenas do nosso servidor
+nosniff
+Tentativas limite de login por ip/por login

@@ -16,11 +16,26 @@ Spring converte os dados para o formato JSON utilizando a biblioteca Jackson
 Dto -> Controlar quais atributos/propriedades será enviado ao JSON
 Classes DTO saem do servidor pro client-side a as Classes Form saem do usuario pro servidor
 
--Spring DATA-
+---------Spring DATA--------------
 Repository -> Cria uma interface que herda JpaRepository<TipoDaClasse, TipoDoIdDaClasse>
 
 Para criar uma reposta diferente de 200 é necessario o ResponseEntity
---
+
+Pageable -> Paginacao com o Spring Data JPA
+    List<> -> Page<> -> Em vez de retornar uma lista devolve uma pagina
+    Direction.ASC/DESC -> Direction é classe que define a direção da ordenação (crescente, decrescente)
+    @EnableSpringDataWebSupport
+    page -> qual a pagina que o cliente está
+    size -> quantidade de elementos por pagina
+    sort -> tipo de ordenação
+    @PageableDefault() -> Anotação para definir um tipo de paginacao padrão se o cliente não inserir nenhum parametro
+
+    @EnableCaching
+        @Cacheable(value = "NOMEDOCACHE") -> Habilita o cache em algum metodo da aplicação
+        @CacheEvict(value = "NOMEDOCACHE") -> Se o metodo for chamado com essa anotação o cache será limpado
+        Devemos utilizar cache apenas para as informações que nunca ou raramente são atualizadas no banco de dados.
+
+------------------------------------------
 
 Error NOT FOUND:
     ResponseEntity.notFound().build();

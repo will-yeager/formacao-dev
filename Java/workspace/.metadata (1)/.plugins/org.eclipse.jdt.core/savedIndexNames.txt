@@ -1,9 +1,0 @@
-INDEX VERSION 1.131+C:\Users\William Jonathan\Documents\Drive\Files\3 - Alura\Formação Dev\Java\workspace\.metadata\.plugins\org.eclipse.jdt.core
-1374762053.index
-1557630702.index
-2016769120.index
-2258321661.index
-1693911205.index
-2702459774.index
-2174185088.index
-2493184552.index

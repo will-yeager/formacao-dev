@@ -1,0 +1,53 @@
+@EnableWebSecurity
+@Configuration
+
+configure(HttpSecurity http)
+    http.authorizeRequests().antMatchers("/").permitAll() -> Autoriza acesso a todos na pagina /
+
+anyRequest().authenticated() -> Bloquear o acesso ao resto das paginas que não foram autorizadas
+
+Interface UserDetails na classe Usuario -> Implementar autenticação na API
+
+UserDetailsService -> logica de autenticação
+
+SecurityConfigurations -> configure(AuthenticationManagerBuilder auth) -> passwordEncoder()
+
+Gerar TOKEN:
+    Jwts.builder()
+                .setIssuer("API do Fórum da Alura")
+                .setSubject(logado.getId().toString())
+                .setIssuedAt(hoje)
+                .setExpiration(dataExpiracao)
+                .signWith(SignatureAlgorithm.HS256, secret).compact();
+
+HEADER TOKEN -> AUTHORIZATION - BEARER TOKEN
+
+Filtro -> Necessario filtro para autentificacao
+
+Spring boot admin -> Projeto para monitoramento da API
+
+Swagger para documentação de API -> Classe(SwaggerConfiguration) -> Metodo(Docket) ->         
+                                                                        return new Docket(DocumentationType.SWAGGER_2)
+                                                                                        .select()
+                                                                                        .apis(RequestHandlerSelectors.basePackage("br.com.alura.forum"))
+                                                                                        .paths(PathSelectors.ant("/**"))
+                                                                                        .build()
+                                                                                        .ignoredParameterTypes(Usuario.class)
+Se precisar de header ->     
+                    .globalOperationParameters((Arrays.asList(
+                        new ParameterBuilder()
+                        .name("Authorization")
+                        .description("Header para token JWT")
+                        .modelRef(new ModelRef("string"))
+                        .parameterType("header")
+                        .required(false)
+                        .build())));
+                        
+hasRole(“NOME_DO_ROLE”)
+
+@ActiveProfiles("test") -> Anotação para a classe atual mudar o perfil atual
+
+@Profile("dev || prod") -> Mudar o perfil da classe para se executada apenas quando estiver em desenvolvimento/produção/teste
+    JVM / java -jar - > Dspring.profiles.active = dev/prod
+    Variaveis de ambiente
+    mvn clean package
