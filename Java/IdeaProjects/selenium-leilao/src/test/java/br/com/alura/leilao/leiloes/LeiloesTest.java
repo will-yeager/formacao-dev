@@ -1,0 +1,44 @@
+package br.com.alura.leilao.leiloes;
+
+import br.com.alura.leilao.login.LoginPage;
+import org.junit.*;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class LeiloesTest {
+
+    private LeiloesPage paginaDeLeiloes;
+    private CadastroLeilaoPage paginaDeCadastro;
+
+    @After
+    public void afterEach() {
+        this.paginaDeLeiloes.fechar();
+    }
+
+    @Before
+    public void beforeEach() {
+        LoginPage paginaDeLogin = new LoginPage();
+        paginaDeLogin.preencheFormularioDeLogin("fulano", "pass");
+        this.paginaDeLeiloes = paginaDeLogin.efetuaLogin();
+        this.paginaDeCadastro = paginaDeLeiloes.carregarFormulario();
+    }
+
+    @Test
+    public void deveriaCadatrarLeilao() {
+        String hoje = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        String nome = "Leilao do dia " + hoje;
+        String valor = "500.00";
+        this.paginaDeLeiloes = paginaDeCadastro.cadastrarLeilao(nome, valor, hoje);
+        Assert.assertTrue(paginaDeLeiloes.isLeilaoCadastrado(nome, valor, hoje));
+    }
+
+    @Test
+    public void deveriaValidarCadastroDeLeilao() {
+        this.paginaDeLeiloes = paginaDeCadastro.cadastrarLeilao("", "", "");
+
+        Assert.assertFalse(this.paginaDeCadastro.isPaginaAtual());
+        Assert.assertTrue(this.paginaDeLeiloes.isPaginaAtual());
+        Assert.assertTrue(this.paginaDeCadastro.isMensagensDeValidacaoVisiveis());
+    }
+}

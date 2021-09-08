@@ -1,0 +1,62 @@
+openapi: 3.0.1
+info -> informações da api
+    title -> titulo da api
+    description -> descrição da api
+    version -> versão da api
+    termsOfService -> link dos termos de serviço
+    contato -> contato para tirar duvidas da api
+        name -> nome de contato
+        email -> email para contato
+        url -> url de contato
+    license -> link da licença da api
+        name -> nome da licença
+        url -> url da licença
+
+servers -> lista dos links da api
+    - url -> url da api
+    description -> descrição do link da api
+
+externalDocs -> Links adicionais
+    description -> descrição do link adicional
+    url -> link adicional
+
+paths -> Definição dos endpoints
+    /path -> endpoint
+    parameters -> Lista de parametros da requisição
+        - name -> Nome do parametro
+        in -> Local do parametro (header, path, etc)
+        schema:
+            type -> Tipo do parametro
+        required -> Se é obrigatorio ou não
+    metodo -> meotodo do endpoint como GET/POST/PUT/DELETE
+        summary ->  Descrição do endpoint
+        responses -> Listagem das respostas possiveis
+            CodigoDeResposta -> Resposta Possivel
+                description -> Descrição da resposta
+                content -> Conteudo da resposta
+                    application/json -> Tipo de conteudo da resposta
+                        schema -> Esquema do conteudo da resposta
+                            type -> Tipo de esquema do conteudo da resposta
+                            items:
+                                type -> Tipo das propriedas do conteudo da resposta
+                            properties -> Lista de propriedades 
+                                properties -> Propriedade do conteudo da resposta
+                                    type -> Tipo da propriedade
+        404:
+            description:
+            content:
+                application/json:
+                    example: "NOT FOUND"
+security -> Demonstrar que é necessario a autorização para o uso dos endpoints
+- auth: []
+
+components -> Reutilizar shcemas
+    securitySchemes:
+        nomeDaSecurity:
+            type: http
+            scheme: bearer
+            bearerFormar: JWT
+
+    
+REFERENCIA A UM COMPONENTE -> $ref : "#/components/tipodecomponente/componente"
+DATA-TYPES 

@@ -91,5 +91,25 @@ TESTES DE ACEITAÇÃO - E2E
 
 ------ Curso Selenium ----------
 
+ESTRUTURA BASICA DO TESTE DE SELENIUM:
+
+   System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
+   WebDriver browser = new ChromeDriver();
+   browser.navigate().to("URL");
+   browser.quit();
+
+browser.findElement(By.METHOD) -> Procura um elemento no HTML do Site
+browser.findElement(By.id("URL")).sendKeys("VARIAVEL"); -> Insere uma variavel em um input no html do Site
+browser.findElement(By.id("-form")).submit(); -> Mehtodo submit submita um formulario do html
+browser.getCurrentUrl() -> Retorna o url atual do site
+browser.findElement(By.id("text")).getText(); -> Retorna o texto que está em um elemento do html
+browser.getPageSource() -> Retorna o codigo fonte da pagina
+browser.getPageSource().contains("content")); -> Verifica se o codigo fonte da pagina contem um conteudo especifico
+findElement devolve o objeto WebElement
+browser.manage().timeouts().implicitlyWait(TEMPO, TimeUnit.SECONDS); -> Determina um tempo de espera para depois executar os testes
+
+sdfjsadfksdjlfjsdkfjl
+
+
 
 

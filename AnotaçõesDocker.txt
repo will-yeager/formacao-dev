@@ -1,0 +1,110 @@
+Docker Engine
+Docker Hub
+Docker Swarm
+
+Alpine Linux
+
+docker exec -it container_id bash -> Abre o bash do container
+
+docker version
+docker nome_da_imagem
+docker ps -> Listar containers que estão rodando
+docker ps -a -> Listar todos containers
+docker ps -q -> Lista os containers que estao rodando
+docker stop $(docker ps -q) -> Para todos containers que estão rodando
+docker start docker_id -> Startar um docker especifico 
+docker start -a -i docker_id -> Startar um docker especifico transformar o atual cmd em cmd do container
+docker rm id_container -> Remover container
+docker container prune -> Remover todos container inativos
+docker images -> Mostra todas imagens
+docker rmi nome_da_imagem -> Remover imagem
+
+docker run -it nome_da_imagem -> Rodar o container e transformar o atual cmd em cmd do container
+docker run -d nome_da_imagem -> Rodar o container no background
+docker run -d -P nome_da_imagem -> Rodar o container no background e mapear uma porta para o host ter acesso  
+docker run -d -p porta_para_mapear:porta_do_container nome_da_imagem -> Mapear uma porta especifica para o host ter acesso
+docker run --name nome_do_container nome_da_imagem -> Nomeia o container para não depender do id
+docker run -e variavel_de_ambiente nome_da_imagem -> Seta variaveis de ambientes dentro do container
+docker run -v "/var/www" nome_da_imagem -> Cria um volume para uma imagem
+docker run -v "FolderOfHost:/var/www" nome_da_imagem -> Cria um volume para uma imagem uma pasta especificada pelo desenvolvedor
+docker run --name nome_container -it --network rede_criada nome_da_imagem -> Criar um container numa rede criada
+docker port id_container -> Ver qual porta esta sendo mapeado pelo container
+docker stop id_container -> Parar o container
+
+docker build -f Dockerfile -t nome_do_dev/nome_da_imagem -> Buildar a imagem criada 
+
+Para criar uma imagem é apenas criar um arquivo DockerFile no projeto e buildar
+CRIANDO UMA IMAGEM
+
+FROM img_base:versao_da_img
+MAINTANER nome_do_dev
+COPY . /var/www -> Copia todos os arquivos dentro do projeto para /var/wwww
+RUN
+WORKDIR /var/www -> Pasta onde os docker ira trabalhar
+ENTRYPOINT ["java", "-jar", "/app.jar"] -> Comando a ser executado quando iniciada a imagem
+EXPOSE porta_do_container
+
+docker push nome_da_imagem -> Subir sua imagem para um repositorio publico/privado
+docker pull nome_da_imagem -> Baixar a imagem de um dos seus repositorios
+
+docker network create --driver bridge nome_da_rede
+docker inspect id_do_container -> Verificar a qual rede ele pertence
+ping name_do_container.nome_da_rede -> Conexão dos container
+
+---- DOCKER COMPOSE.yml ----
+PRECISA INSTALAR O DOCKER COMPOSE 
+
+docker-compose build -> Para buildar todas as imagens do docker-compose
+docker-compose up -> Starta todos os containers usando as configuraçoes do docker compose
+docker-compose down -> Para todos os container
+dcoker exec -it nome_da_container1 ping nome_do_container2
+
+version: '3'
+services:
+    seu_servico_container:
+        build:
+            dockerfile: dir do dockerfile
+            context: .
+        image: nome_da_imagem_docker
+        container_name: nome_container
+        networks:
+            - nome_da_rede
+        ports:
+            - "porta_do_host:porta_do_container"
+        depends_on:
+            - "nome_do_container"
+
+networks:
+    - nome_da_rede
+
+
+DOCKER Swarm
+
+docker-machine create -d virtualbox vm -> Criar uma maquina virtual usando o driver virtualbox
+docker-machine ssh vm -> Usar o ssh na machine docker
+
+docker swarm init
+docker swarm join-token worker -> Retorna o token para ser usado nas outras maquinas virtuais como worker
+docker swarm join-token manager -> Retorna o token para ser usado nas outras maquinas virtuais como manager
+
+
+docker node ls -> lista os workes do seu swarm
+docker swarm leave -> para a vm sair do swarm para depois remove-la no swarm
+docker node rm ID_DO_VM -> para remover a vm do swarm
+docker node demote nomeDaVm -> Alterar um manager para worker
+docker node update --availability drain nomeDaVm -> Alterar a disponibilidade de uma VM, para não executar mais serviços
+
+docker service create -p PORT IMAGE_DOCKER
+    docker service create -p PORT --mode global IMAGE_DOCKER -> Em todos os nos será executado esse serviço
+docker service update --constraint-add node.role == ROLE -> Restringir um serviço podendo ser executado apenas por um tipo de nó
+docker service update --constraint-rm node.role == ROLE -> Removendo a restrição
+
+docker service update --replicas 5 ID_do_Serviço -> Altera o numero de replicadas de um determinado serviço
+    docker service scale ID_do_Serviço=5 -> Altera o numero de replicadas de um determinado serviço
+
+cp -r folder1 folder2 -> Copy no linux ssh
+docker swarm init --force-new-cluster -> Para forçar o inicio usando as configurações de um backup
+
+docker network create -d overlay NOME_DA_NETWORK -> Criar uma network para poder chamar os serviços por meio do nome
+
+docker stack deploy -> Utilizar um arquivo de composição e subir uma pilha de serviços simultaneamente.

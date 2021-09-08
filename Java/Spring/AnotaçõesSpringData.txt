@@ -1,0 +1,11 @@
+Sort.by(Modo_de_Sort, Atributo)
+Derived Querys -> FindBySomething
+JPQL Query -> @Query
+Native Query -> @Query(value = "", nativeQuery = true/false)
+
+Specification<?> atributo(TipoDoAtributo atributo) {
+    return (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.(like/equal/greaterThan)(root.get("atributo"), atributo);
+}
+Para usar o Specification -> repository.findAll(Specification.where(
+        Classe_da_Specification.atributo(atributoPeloUsuario))
+        .or(Classe_da_Specification.atributo(atributoPeloUsuario)))

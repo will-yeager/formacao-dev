@@ -57,3 +57,50 @@ Estruturais :
 
     Proxy ->
         Interceptar um valor/classe para fazer validação, perfomace guardando em um proxy
+
+-------------------------------------------------------------------------------------
+
+@Slf4j - LOG - LOMBOK SPRING
+    log.info("msg")
+
+Componentes do software e suas relações
+Infraestrutura do software
+Estrutra e design do código
+Suporte aos requisitos de negócio
+Simplificar evoluções no software -> Escalabilidade
+
+Requisitos não funcionais que são quase sempre negligenciados -> Manutenibiliadade, Extensibilidade
+
+Clean Architecture :
+    Isolar o código de domínio da aplicação
+    Inversão de dependencias
+    Favorece boas práticas de Orientação a Objetos
+    Código de domínio com alta "testabilidade"
+    Independencia de frameworks e detalhes de infraestrutura
+
+    Entidades -> Possuem uma identidade única
+    Value Objects -> Não possui uma identidade única, se a igualdade do objeto é relacionada na comparação de todos seus valores
+    Repository -> Implementar em camadas para ter independencia em suas implementações
+
+    Se retornar o builder pode ficar encadeamento de metodos
+
+    Infraestrutura -> Aplicação -> Dominio
+
+    Domain Services -> classes que representam uma ação entre mais de uma Entidade
+    Application Service/Use Case/Command Handler -> Controlam o fluxo de alguma regra em nossa aplicação, servem para fornecer pontos de entradas na sua aplicação
+    Infraestructure Services -> Implementações de interfaces presentes nas camadas de dominio ou de aplicação
+
+DDD - Domain Driven Design :
+    Foco no dominio
+    Linguaguem Ubiqua 
+    Contexto delimitado
+    Blocos de construção -> Services, Repository, Entity, Value Objects separação em camadas
+
+    Linguagem Ubiquoa -> Uma linguagem universal que traz o entendimento entre a linguagem de negocios e lingaguem tecnica
+    Invariantes -> Regra de negocio que deve sempre ser verdadeira para os objetos serem válidos
+
+    Aggregates -> Conjunto de coisas que pertencem a um Aggregate root - Uma boa pratica é o root comandar todas ações que modificam os seus agreggates
+    Eventos ->
+    Bounded Contexts / Contextos delimitados -> A separação de contexto da para projeto flexibilidade 
+    Camada anti-corrupção -> Camada para fazer comunicação de elementos compartilhados sem o comprometimento do sistema inteiro
+    Sistemas distribuidos -> Sistema divido em sistemas menores - MICROSERVIÇOS

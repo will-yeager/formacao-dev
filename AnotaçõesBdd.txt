@@ -1,0 +1,23 @@
+BDD tenta melhorar a comunicação e colaboração
+BDD tenta aproximar o negócio e criar um entendimento melhor como a aplicação deveria funcionar
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features = "classpath:features") -> Define a rota para o arquivo features onde é armazenado os passos de teste
+class CucumberRunner -> Definição da classe para rodar o Cucumber
+
+nome-do-teste.feature -> Arquivo para definição do passo a passo do teste
+    Feature: Nome da Feature
+
+    Scenario: Testando um cenario
+        Given Define algo que é dado
+        And Define outra coisa que é dado
+        When Define quando acontece algo
+        Then Define oque acontece depois
+
+Classe de Teste usa anotações em cada metodo como @Given, @When, @Then para determinar cada passo
+public class NomeDoTestSteps -> Necessario usar o mesmo nome que dado ao arquivo do features
+
+Hooks -> Cuidado pois para quem le as features não aparece essas anotações
+@Before e @After -> São executados antes e depois de cada teste respectivamente
+
+@CucumberOptions(features = "classpath:features", tags="@tagDeTeste") -> Pode definir tags para rodar apenas testes pre selecionados
